@@ -12,11 +12,20 @@ public class BoardService {
 
     @Autowired
     private BoardRepository boardRepository;
+    //Handles new content submission.
     public void write(Board board){
+
         boardRepository.save(board);
     }
-
+    //Manages the display of a list of posts.
     public List<Board> boardList(){
+
         return boardRepository.findAll();
+
+    }
+
+    public Board boardView(Integer id){
+
+        return boardRepository.findById(id).get();
     }
 }
