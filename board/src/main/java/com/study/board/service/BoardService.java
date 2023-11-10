@@ -33,7 +33,7 @@ public class BoardService {
     public void delete(Integer id){
 
         boardRepository.deleteById(id);
-}
+    }
 
 
 }
