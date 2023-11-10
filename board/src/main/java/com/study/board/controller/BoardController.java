@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class BoardController {
-
     @Autowired
     private BoardService boardService;
     @GetMapping("/board/write") //localhost:8080/board/write
