@@ -4,6 +4,7 @@ import com.study.board.entity.Board;
 import com.study.board.repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
@@ -18,14 +19,22 @@ public class BoardService {
         boardRepository.save(board);
     }
     //Manages the display of a list of posts.
-    public List<Board> boardList(){
+    public List<Board> list(){
 
         return boardRepository.findAll();
 
     }
 
-    public Board boardView(Integer id){
+    public Board view(Integer id){
 
         return boardRepository.findById(id).get();
     }
+
+    // remove bbs content
+    public void delete(Integer id){
+
+        boardRepository.deleteById(id);
+}
+
+
 }
